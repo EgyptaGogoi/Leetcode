@@ -1,0 +1,4 @@
+Hello! I started CP in 2020 but i was never consistent hence I'm resuming my journey again. So, this 
+time, my goal is to practice DSA and to solve atleast to 150 in a time period of 1 year.
+
+Hoping for a consistent CP repo!
