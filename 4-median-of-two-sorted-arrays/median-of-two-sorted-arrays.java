@@ -4,15 +4,10 @@ class Solution {
         int merg[]=new int[l1+l2];
         in=(int)((l1+l2)/2);
         while(k<=in && i<l1 && j<l2){
-            if(nums1[i]<nums2[j]){
+            if(nums1[i]<nums2[j])
                 merg[k++]=nums1[i++];
-                // i++;
-                
-            }
-            else{
+            else
                 merg[k++]=nums2[j++];
-              
-            }
         }
         while(k<=in){
             if(i<l1)
