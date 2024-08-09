@@ -1,17 +1,18 @@
 class Solution {
     public boolean isPowerOfTwo(int n) {
-        // int prod=1;
-        // while(prod!=n)
-        //     prod=prod*2;
-        // if(prod==n)
+        // if(n==0)
+        //     return false;
+        // if(n%2==1 && n>1)
+        //     return false;
+        // if(n==1)
         //     return true;
-        // return false; 
+        // return isPowerOfTwo(n/2);
         if(n==0)
             return false;
-        if(n%2==1 && n!=1)
-            return false;
-        if(n==1)
+        int lg=(int) (Math.log(n) / Math.log(2));
+        System.out.print(lg);
+        if(Math.pow(2,lg)==n)
             return true;
-        return isPowerOfTwo(n/2);
+        return false;
     }
 }
