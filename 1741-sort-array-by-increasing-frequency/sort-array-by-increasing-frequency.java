@@ -10,13 +10,13 @@ class Solution {
             temp[i] = nums[i];
         
         Arrays.sort(temp, new Comparator<Integer>() {
-        public int compare(Integer a, Integer b) {
-            if(hm.get(a) == hm.get(b)){
-                return b-a;
+            public int compare(Integer a, Integer b) {
+                if(hm.get(a) == hm.get(b)){
+                    return b-a;
+                }
+                return hm.get(a) - hm.get(b);
             }
-            return hm.get(a) - hm.get(b);
-        }
-    });
+        });
 
         for(int i = 0; i < nums.length; i++)    
             nums[i] = temp[i];
