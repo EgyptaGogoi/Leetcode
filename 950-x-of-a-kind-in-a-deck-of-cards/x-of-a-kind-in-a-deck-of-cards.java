@@ -18,18 +18,8 @@ class Solution {
     public boolean hasGroupsSizeX(int[] deck) {
         HashMap <Integer,Integer> freq = new HashMap <>();
         int i = 0, n = deck.length, c=0;
-        // if (n%2 !=0)
-        //     return false;
-        for(i = 0; i<n; i++){
-            // if(freq.contains(deck[i])){
+        for(i = 0; i<n; i++)
                 freq.put(deck[i],freq.getOrDefault(deck[i],0)+1);
-            // }
-        }
-        // int min=Integer.MAX_VALUE;
-        // for (Map.Entry<Integer, Integer> entry : freq.entrySet()) {
-        //     if(entry.getValue()<min)
-        //         min=entry.getValue();
-        // }
         int flag=0;
         int []f =new int[freq.size()];
         i=0;
@@ -39,16 +29,6 @@ class Solution {
         int gcd=GcdOfArray(f,0);
         if(gcd<=1)
             return false;
-        // System.out.println(gcd);
-        // for (Map.Entry<Integer, Integer> entry : freq.entrySet()) {
-        //     // if(entry.getValue()!=m ){
-        //         if(entry.getValue()%gcd != 0)
-        //             return false;
-        //         System.out.println( entry.getValue());
-                
-        // }
-            
-        
         return true;
     }
 }
