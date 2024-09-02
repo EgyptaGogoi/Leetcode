@@ -39,14 +39,14 @@ class Solution {
         int gcd=GcdOfArray(f,0);
         if(gcd<=1)
             return false;
-        System.out.println(gcd);
-        for (Map.Entry<Integer, Integer> entry : freq.entrySet()) {
-            // if(entry.getValue()!=m ){
-                if(entry.getValue()%gcd != 0)
-                    return false;
-                System.out.println( entry.getValue());
+        // System.out.println(gcd);
+        // for (Map.Entry<Integer, Integer> entry : freq.entrySet()) {
+        //     // if(entry.getValue()!=m ){
+        //         if(entry.getValue()%gcd != 0)
+        //             return false;
+        //         System.out.println( entry.getValue());
                 
-        }
+        // }
             
         
         return true;
