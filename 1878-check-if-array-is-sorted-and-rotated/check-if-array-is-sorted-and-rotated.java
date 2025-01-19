@@ -1,11 +1,7 @@
 class Solution {
     public boolean check(int[] nums) {
-        // int [] copyNums = nums.clone();
-        // Arrays.sort(copyNums);
-        // if(Arrays.equals(nums,copyNums))
+        // if(nums.length==2 || nums.length==1)
         //     return true;
-        if(nums.length==2 || nums.length==1)
-            return true;
         int curr=nums[0],drop=0;
         for(int i=1; i<nums.length; i++){
             if(curr>nums[i])
