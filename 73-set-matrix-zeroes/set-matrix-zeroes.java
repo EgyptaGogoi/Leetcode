@@ -16,9 +16,8 @@ class Solution {
         }
         for(i=0; i<m; i++){
             for(j=0; j<n; j++){
-                if(zeros_i.contains(i) || zeros_j.contains(j)){
+                if(zeros_i.contains(i) || zeros_j.contains(j))
                    matrix[i][j]=0;
-                }
             }
         }
     }
