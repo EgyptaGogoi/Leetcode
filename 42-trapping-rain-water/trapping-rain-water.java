@@ -8,7 +8,7 @@ class Solution {
 
         while (currL < currR) {
             if (height[currL] < height[currR]) {
-                currL++;
+                ++currL;
                 if (height[currL] >= LG) {
                     LG = height[currL]; // update LG
                 } else {
@@ -16,7 +16,7 @@ class Solution {
                     sum += min - height[currL];
                 }
             } else {
-                currR--;
+                --currR;
                 if (height[currR] >= RG) {
                     RG = height[currR]; // update RG
                 } else {
