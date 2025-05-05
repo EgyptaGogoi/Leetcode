@@ -1,11 +1,17 @@
 class Solution {
+    // SIMPLE METHOD OF GCD ARRAY
+    // public int gcd(int a, int b){
+    //     int min=Math.min(a,b);
+    //     for(int i=min; i>=1; i--){
+    //         if(a%i==0 && b%i==0)
+    //             return i;
+    //     }
+    //     return 1;
+    // }
     public int gcd(int a, int b){
-        int min=Math.min(a,b);
-        for(int i=min; i>=1; i--){
-            if(a%i==0 && b%i==0)
-                return i;
-        }
-        return 1;
+        if(b==0)
+            return a;
+        return gcd(b,a%b);
     }
     public boolean hasGroupsSizeX(int[] deck) {
         if(deck.length==1)
