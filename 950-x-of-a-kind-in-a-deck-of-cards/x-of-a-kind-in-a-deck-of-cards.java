@@ -1,5 +1,5 @@
 class Solution {
-    // SIMPLE METHOD OF GCD ARRAY
+    // SIMPLE METHOD OF GCD 
     // public int gcd(int a, int b){
     //     int min=Math.min(a,b);
     //     for(int i=min; i>=1; i--){
@@ -8,6 +8,7 @@ class Solution {
     //     }
     //     return 1;
     // }
+    // EUCLIDIEN METHOD OF GCD
     public int gcd(int a, int b){
         if(b==0)
             return a;
@@ -30,7 +31,7 @@ class Solution {
         for(i=1; i<frq.length; i++){
             g=gcd(g,frq[i]);
         }
-        System.out.print(g);
+        // System.out.print(g);
         return g>=2;
     }
 }
