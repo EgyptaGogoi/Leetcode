@@ -1,34 +1,30 @@
 class Solution {
-    static int __gcd(int a, int b)  
-    {  
-        return b == 0? a:__gcd(b, a % b);     
-    }
-  
-// recursive implementation
-    static int GcdOfArray(int[] arr, int idx)
-    {
-        if (idx == arr.length - 1) {
-            return arr[idx];
+    public int gcd(int a, int b){
+        int min=Math.min(a,b);
+        for(int i=min; i>=1; i--){
+            if(a%i==0 && b%i==0)
+                return i;
         }
-        int a = arr[idx];
-        int b = GcdOfArray(arr, idx + 1);
-        return __gcd(
-            a, b); // __gcd(a,b) is inbuilt library function
+        return 1;
     }
     public boolean hasGroupsSizeX(int[] deck) {
-        HashMap <Integer,Integer> freq = new HashMap <>();
-        int i = 0, n = deck.length, c=0;
-        for(i = 0; i<n; i++)
-                freq.put(deck[i],freq.getOrDefault(deck[i],0)+1);
-        int flag=0;
-        int []f =new int[freq.size()];
-        i=0;
-        for (Map.Entry<Integer, Integer> entry : freq.entrySet()){
-            f[i++]=entry.getValue();
-        }
-        int gcd=GcdOfArray(f,0);
-        if(gcd<=1)
+        if(deck.length==1)
             return false;
-        return true;
+        HashMap<Integer,Integer> hm = new HashMap<>();
+        int i;
+        for(i=0; i<deck.length; i++){
+            hm.put(deck[i],hm.getOrDefault(deck[i],0)+1);
+        } 
+        int frq[]= new int[hm.size()];
+        i=0;
+        for (Map.Entry<Integer,Integer> ele : hm.entrySet()) {
+              frq[i++]=ele.getValue();
+        }
+        int g=frq[0];
+        for(i=1; i<frq.length; i++){
+            g=gcd(g,frq[i]);
+        }
+        System.out.print(g);
+        return g>=2;
     }
 }
