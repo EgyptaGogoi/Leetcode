@@ -4,12 +4,7 @@ class Solution {
             return Math.min(height[0],height[1]);
         int L,R,area=0,h,b,n=height.length,mid;
         L=0; 
-        R=n-1;
-        // mid=(R-L)/2+L;
-        // R=mid;
-        // L=mid-1;
-        System.out.println(R);
-        
+        R=n-1; 
         while(L<R){
             if(height[R]<=height[L]){
                h=height[R];
@@ -25,8 +20,6 @@ class Solution {
                     area=h*b;
                 L++;
             }
-            System.out.println(area);
-
         }
         return area;
     }
