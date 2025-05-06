@@ -2,7 +2,7 @@ class Solution {
     public int maxArea(int[] height) {
         if(height.length==2)
             return Math.min(height[0],height[1]);
-        int L,R,area=0,h,b,n=height.length;
+        int L,R,area=0,h,b,n=height.length,mid;
         L=0; 
         R=n-1; 
         while(L<R){
