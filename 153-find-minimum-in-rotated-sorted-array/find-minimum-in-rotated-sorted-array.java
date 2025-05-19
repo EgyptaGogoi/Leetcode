@@ -1,6 +1,6 @@
 class Solution {
     public int findMin(int[] nums) {
-        int l,r,mid,small=Integer.MAX_VALUE;
+        int l,r,mid;
         l=0;
         r=nums.length-1;
         while(l<r){
