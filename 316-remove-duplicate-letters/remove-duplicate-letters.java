@@ -7,15 +7,19 @@ class Solution {
             if(!lastO.containsKey(s.charAt(i)))
                 lastO.put(s.charAt(i),i);
         }
+        Set<Character> visited = new HashSet<>();
         for(i = 0; i<s.length(); i++){
-            while(!st.isEmpty() && (st.peek() > s.charAt(i)) && st.search(s.charAt(i))==-1){
-                if(lastO.get(st.peek()) > i)
-                    st.pop();
+            if(visited.contains(s.charAt(i)))
+                continue;
+            while(!st.isEmpty() && (st.peek() > s.charAt(i))){
+                if(lastO.get(st.peek()) > i){
+                    visited.remove(st.pop());
+                }  
                 else
                     break;
             }
-            if(st.isEmpty() || st.search(s.charAt(i))== -1)
-                st.push(s.charAt(i));
+            st.push(s.charAt(i));
+            visited.add(s.charAt(i));
         }
         StringBuilder sb = new StringBuilder();
         for (char ch : st) 
