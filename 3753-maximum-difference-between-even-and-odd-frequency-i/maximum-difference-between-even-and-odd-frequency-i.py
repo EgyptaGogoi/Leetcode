@@ -11,6 +11,16 @@ class Solution(object):
         sortls=sorted(ls, reverse=True)
         i=0
         j=len(sortls)-1
-        maxf= max(val for val in sortls if val%2==1)
-        minf= min(val for val in sortls if val%2==0)
+        maxf=0
+        minf=0
+        while i<(len(sortls)):
+            if sortls[i]%2==1:
+                maxf=sortls[i]
+                break
+            i+=1
+        while j>=0:
+            if sortls[j]%2==0:
+                minf=sortls[j]
+                break
+            j-=1
         return maxf-minf
