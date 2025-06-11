@@ -1,5 +1,9 @@
-class Solution:
-    def maxDifference(self, s: str) -> int:
+class Solution(object):
+    def maxDifference(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
         freq={}
         for char in s:
             freq[char]=freq.get(char,0)+1
@@ -14,13 +18,9 @@ class Solution:
                 maxf=sortls[i]
                 break
             i+=1
-        
         while j>=0:
             if sortls[j]%2==0:
                 minf=sortls[j]
                 break
             j-=1
-        # print(sortls)
-        # print(maxf,minf)
         return maxf-minf
-    
