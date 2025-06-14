@@ -4,6 +4,8 @@ class Solution(object):
         :type grid: List[List[int]]
         :rtype: int
         """
+        if not grid:
+            return -1
         q = deque()
         fo = 0
         t =0
