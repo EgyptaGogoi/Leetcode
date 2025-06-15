@@ -6,7 +6,6 @@ class Solution(object):
         """
         queue= deque()
         ls=[]
-        i=1
         queue.append("0")
         queue.append("1")
         extras=["0","1"]
