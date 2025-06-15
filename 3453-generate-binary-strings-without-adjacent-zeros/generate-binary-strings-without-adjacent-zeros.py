@@ -13,11 +13,8 @@ class Solution(object):
             s=queue.popleft()
             if len(s) < n :
                 if s[len(s)-1] == "1":
-                    for e in extras:
-                        ss=s+e 
-                        queue.append(ss)
-                if s[len(s)-1] == "0":
-                    queue.append(s+extras[1])
+                   queue.append(s+"0")
+                queue.append(s+"1")
             else :
                 ls.append(s)
         return ls
