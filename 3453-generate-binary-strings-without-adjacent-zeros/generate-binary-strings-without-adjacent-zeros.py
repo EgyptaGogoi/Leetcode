@@ -4,10 +4,6 @@ class Solution(object):
         :type n: int
         :rtype: List[str]
         """
-        if n == 1:
-            return ["0", "1"]
-        if n == 2:
-            return ["01", "10", "11"]
         queue= deque()
         ls=[]
         queue.append("0")
