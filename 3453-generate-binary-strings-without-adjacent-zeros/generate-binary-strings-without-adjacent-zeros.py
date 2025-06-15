@@ -8,7 +8,6 @@ class Solution(object):
         ls=[]
         queue.append("0")
         queue.append("1")
-        extras=["0","1"]
         while queue:
             s=queue.popleft()
             if len(s) < n :
