@@ -12,11 +12,12 @@ class Solution(object):
         while queue:
             s=queue.popleft()
             if len(s) < n :
-                for e in extras:
-                    ss=s+e
-                    if ss[len(ss)-1] == "0" and ss[len(ss)-2] == "0":
-                        continue 
-                    queue.append(ss)
+                if s[len(s)-1] == "1":
+                    for e in extras:
+                        ss=s+e 
+                        queue.append(ss)
+                if s[len(s)-1] == "0":
+                    queue.append(s+extras[1])
             else :
                 ls.append(s)
         return ls
