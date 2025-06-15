@@ -23,7 +23,6 @@ class Solution(object):
                                 queue.append([ii,jj])
                                 grid[ii][jj]='0'
                     count+=1
-        print(grid)
         return count
         
                         
