@@ -12,8 +12,6 @@ class Solution(object):
         """
         if list1 is None and list2 is None:
             return list1
-        # elif list1 is not None or list2 is not None:
-        #     return list1 if list1 is not None else list2
         elif list1 is None and list2 is not None:
             return list2
         elif list1 is not None and list2 is None:
