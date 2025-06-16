@@ -30,24 +30,15 @@ class Solution(object):
             curr3=list3
             while curr1 is not None and curr2 is not None:
                 if curr1.val <= curr2.val:
-                    # curr3.val=curr1.val
-                    # curr3.next = None
-                    
                     temp=ListNode(curr1.val, None)
                     curr3.next=temp
                     curr1=curr1.next
                 else:
-                    # curr3.val=curr2.val
-                    # curr3.next = None
-                    
                     temp=ListNode(curr2.val, None)
                     curr3.next=temp
                     curr2=curr2.next
                 curr3=curr3.next
             if curr1 is not None:
-                # curr3.next=curr1
-                # curr3=curr3.next
-                # curr1=curr1.next
                 curr3.next=curr1
             if curr2 is not None:
                 curr3.next=curr2
