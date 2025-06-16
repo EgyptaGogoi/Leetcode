@@ -10,7 +10,7 @@ class Solution(object):
         :type val: int
         :rtype: Optional[ListNode]
         """
-        nlist= ListNode(0)
+        nlist= ListNode()
         curr= nlist
         while head is not None:
             if head.val != val:
