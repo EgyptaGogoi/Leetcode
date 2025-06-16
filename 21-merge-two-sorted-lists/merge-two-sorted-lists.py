@@ -12,30 +12,26 @@ class Solution(object):
         """
         if list1 is None and list2 is None:
             return list1
-        # elif list1 is not None or list2 is not None:
-        #     return list1 if list1 is not None else list2
         elif list1 is None and list2 is not None:
             return list2
         elif list1 is not None and list2 is None:
             return list1
         else:
-            curr1=list1
-            curr2=list2
             if list1.val <= list2.val:
-                list3 = ListNode(list1.val, None)
+                list3 = ListNode(list1.val)
                 curr1=list1.next
+                curr2=list2
             else:
-                list3 = ListNode(list2.val, None)
+                list3 = ListNode(list2.val)
                 curr2=list2.next
+                curr1=list1
             curr3=list3
             while curr1 is not None and curr2 is not None:
                 if curr1.val <= curr2.val:
-                    temp=ListNode(curr1.val, None)
-                    curr3.next=temp
+                    curr3.next=ListNode(curr1.val)
                     curr1=curr1.next
                 else:
-                    temp=ListNode(curr2.val, None)
-                    curr3.next=temp
+                    curr3.next=ListNode(curr2.val)
                     curr2=curr2.next
                 curr3=curr3.next
             if curr1 is not None:
