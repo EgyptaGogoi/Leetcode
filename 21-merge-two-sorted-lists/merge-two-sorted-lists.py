@@ -17,21 +17,23 @@ class Solution(object):
         elif list1 is not None and list2 is None:
             return list1
         else:
+            curr1=list1
+            curr2=list2
             if list1.val <= list2.val:
-                list3 = ListNode(list1.val)
+                list3 = ListNode(list1.val, None)
                 curr1=list1.next
-                curr2=list2
             else:
-                list3 = ListNode(list2.val)
+                list3 = ListNode(list2.val, None)
                 curr2=list2.next
-                curr1=list1
             curr3=list3
             while curr1 is not None and curr2 is not None:
                 if curr1.val <= curr2.val:
-                    curr3.next=ListNode(curr1.val)
+                    temp=ListNode(curr1.val, None)
+                    curr3.next=temp
                     curr1=curr1.next
                 else:
-                    curr3.next=ListNode(curr2.val)
+                    temp=ListNode(curr2.val, None)
+                    curr3.next=temp
                     curr2=curr2.next
                 curr3=curr3.next
             if curr1 is not None:
