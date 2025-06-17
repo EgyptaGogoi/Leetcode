@@ -11,9 +11,11 @@ class Solution(object):
         """
         prev = None
         curr = head
+
         while curr:
             nexnode = curr.next
-            curr.next=prev
-            prev=curr
-            curr=nexnode
+            curr.next = prev
+            prev = curr
+            curr = nexnode
+
         return prev
