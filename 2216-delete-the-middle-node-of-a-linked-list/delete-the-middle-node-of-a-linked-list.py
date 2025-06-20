@@ -20,7 +20,8 @@ class Solution(object):
         while c:
             slow = slow.next
             c -= 1
-        slow.next = slow.next.next
+        # print(slow.val)
+        slow.next=slow.next.next
         return head
 
             
