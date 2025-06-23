@@ -20,19 +20,15 @@ class Solution(object):
         :type head: Optional[ListNode]
         :rtype: None Do not return anything, modify head in-place instead.
         """
-        curr = head
-        len = 0
-        while curr:
-            len+=1
-            curr=curr.next
-        len = len//2 +1 if len%2==1 else len//2  
+        fast = head
+        slow = head
+        while (fast.next and fast.next.next) :
+            slow = slow.next
+            fast = fast.next.next 
         
-        mid = head
-        for i in range(1,len):
-            mid = mid.next
         
-        curr2= self.revList(mid.next)
-        mid.next= None
+        curr2= self.revList(slow.next)
+        slow.next= None
         curr1=head
         
         while curr1 and curr2:
