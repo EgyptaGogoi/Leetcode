@@ -27,16 +27,20 @@ class Solution(object):
             fast = fast.next.next 
         
         
-        curr2= self.revList(slow.next)
-        slow.next= None
-        curr1=head
+        curr2 = self.revList(slow.next)
+        slow.next = None
+        curr1 = head
         
         while curr1 and curr2:
-            newNext = curr2.next
-            curr2.next = curr1.next
-            curr1.next=curr2
-            curr2=newNext
-            curr1= curr1.next.next
+            newNext1 = curr1.next
+            newNext2 = curr2.next
+            
+            curr2.next = newNext1
+            curr1.next = curr2
+
+            curr1 = newNext1
+            curr2 = newNext2
+        
         
 
 
