@@ -7,19 +7,19 @@ class Solution(object):
         """
         i = 0
         j = len(nums)-1
-        while i<j:
+        while i < j:
             if nums[i] != val:
-                i+=1
+                i += 1
             elif nums[i] == val and nums[j] != val:
                 temp = nums[i]
-                nums[i]=nums[j]
-                nums[j]= temp
-                i+=1
-                j-=1
+                nums[i] = nums[j]
+                nums[j] = temp
+                i += 1
+                j -= 1
             else:
-                j-=1
+                j -= 1
 
-        count=0
+        count = 0
         for ele in nums:
             if ele != val:
                 count+=1
