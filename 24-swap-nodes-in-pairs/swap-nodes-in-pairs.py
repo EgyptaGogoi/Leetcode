@@ -22,9 +22,7 @@ class Solution(object):
                 curr2.next=curr1
                 curr1=nextcurr1
                 if nextcurr1:
-                    curr2=nextcurr1.next
-                
-                
+                    curr2=nextcurr1.next  
         return head
                 
 
