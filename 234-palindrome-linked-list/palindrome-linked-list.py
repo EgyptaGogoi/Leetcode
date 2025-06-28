@@ -4,38 +4,35 @@
 #         self.val = val
 #         self.next = next
 class Solution(object):
-    def reversedList(self, head):
-        prev = None
+    def revL(self, head):
         curr = head
-
+        prev = None
         while curr:
-            nexnode = curr.next 
+            nextNode = curr.next
             curr.next = prev
             prev = curr
-            curr = nexnode
-            
-        return prev 
-
+            curr = nextNode
+        return prev
     def isPalindrome(self, head):
         """
         :type head: Optional[ListNode]
         :rtype: bool
         """
-        oldlist = ListNode(head.val)
-        oldcurr = head.next
-        newcurr = oldlist
-
-        while oldcurr :
-            newcurr.next= ListNode(oldcurr.val)
-            oldcurr=oldcurr.next
-            newcurr=newcurr.next
-        
-        revlist = self.reversedList(head)
-
-        while revlist :
-            if revlist.val != oldlist.val :
+        curr1 = head
+        curr2 = newhead = ListNode(head.val)
+        while curr1 and curr1.next:
+            curr2.next = ListNode(curr1.next.val)
+            curr2 = curr2.next
+            curr1 = curr1.next
+        curr2 = newhead = self.revL(newhead)
+        while head and newhead:
+            if head.val != newhead.val:
                 return False
-            revlist = revlist.next
-            oldlist = oldlist.next
+            head = head.next
+            newhead = newhead.next
+        return True
 
-        return True       
+
+        
+    
+        
