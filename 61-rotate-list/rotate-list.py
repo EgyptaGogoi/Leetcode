@@ -13,22 +13,18 @@ class Solution(object):
         if k == 0 or not head:
             return head 
         curr = head
-        ln = 0
-        while curr:
+        ln = 1
+        while curr.next:
             curr = curr.next
             ln += 1
         rot = k % ln
-        curr = head.next
-        prev = head
-        while rot :
-            while curr.next:
-                curr = curr.next
-                prev = prev.next
-            prev.next = None
-            curr.next = head
-            head = curr
-            curr = head.next
-            prev = head
-            rot-=1
-        return head
+        index_tail = ln - rot # at what index the new tail will be
+        curr.next = head # make list circular
+        new_tail = curr 
+        while index_tail:
+            new_tail = new_tail.next
+            index_tail -= 1
+        newhead = new_tail.next
+        new_tail.next = None
+        return newhead
             
