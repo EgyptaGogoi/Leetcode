@@ -1,38 +1,34 @@
-# Definition for singly-linked list.
-# class ListNode(object):
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
 class Solution(object):
     def revL(self, head):
-        curr = head
         prev = None
+        curr = head
         while curr:
             nextNode = curr.next
             curr.next = prev
             prev = curr
             curr = nextNode
         return prev
+
     def isPalindrome(self, head):
-        """
-        :type head: Optional[ListNode]
-        :rtype: bool
-        """
-        curr1 = head
-        curr2 = newhead = ListNode(head.val)
-        while curr1 and curr1.next:
-            curr2.next = ListNode(curr1.next.val)
-            curr2 = curr2.next
-            curr1 = curr1.next
-        curr2 = newhead = self.revL(newhead)
-        while head and newhead:
-            if head.val != newhead.val:
-                return False
-            head = head.next
-            newhead = newhead.next
-        return True
+        if not head or not head.next:
+            return True
+
+        slow = fast = head
+        while fast and fast.next:
+            fast = fast.next.next
+            slow = slow.next
+
+        second_half_start = self.revL(slow)
+
+        first_half = head
+        second_half = second_half_start
+        result = True
+        while second_half:
+            if first_half.val != second_half.val:
+                result = False
+                break
+            first_half = first_half.next
+            second_half = second_half.next
 
 
-        
-    
-        
+        return result
