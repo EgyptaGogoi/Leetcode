@@ -18,8 +18,8 @@ class Solution(object):
             curr = curr.next
             ln += 1
         rot = k % ln
-        index_tail = ln - rot # at what index the new tail will be
-        curr.next = head # make list circular
+        index_tail = ln - rot 
+        curr.next = head 
         new_tail = curr 
         while index_tail:
             new_tail = new_tail.next
