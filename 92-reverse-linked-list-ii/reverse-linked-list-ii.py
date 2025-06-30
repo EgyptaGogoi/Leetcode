@@ -37,7 +37,6 @@ class Solution(object):
                 end = curr
                 break
         link_last_node = end.next
-        # print (link_last_node)
         if left == 1:
             newhead = self.revL(start,end,link_last_node)
         else :
@@ -45,6 +44,5 @@ class Solution(object):
             while newstart.next != start:
                 newstart=newstart.next
             newstart.next = self.revL(start, end,link_last_node)
-            # print(newstart)
         return newhead
         
