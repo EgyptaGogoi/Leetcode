@@ -8,7 +8,7 @@ class Solution(object):
         while len(word) <= k:
             neword = ""
             for ch in word :
-                asc = 97 if ch == 'z' else ord(ch)+1
+                asc = (ord(ch) - ord('a') + 1) % 26 + ord('a')
                 neword += chr(asc)
             word += neword
         return word[k-1]
