@@ -9,22 +9,21 @@ class Solution(object):
         if not head or not head.next:
             return head
         
-        # Step 1: Split the list into two halves using slow and fast pointers
         slow = head
-        fast = head.next  # ensures splitting at mid
+        fast = head.next 
         
         while fast and fast.next:
             slow = slow.next
             fast = fast.next.next
         
         mid = slow.next
-        slow.next = None  # break the list into two parts
+        slow.next = None 
 
-        # Step 2: Recursively sort both halves
+        
         left = self.sortList(head)
         right = self.sortList(mid)
 
-        # Step 3: Merge the sorted halves
+        
         return self.merge(left, right)
     
     def merge(self, l1, l2):
@@ -40,7 +39,7 @@ class Solution(object):
                 l2 = l2.next
             tail = tail.next
         
-        # Attach the remaining elements
+        
         if l1:
             tail.next = l1
         else:
