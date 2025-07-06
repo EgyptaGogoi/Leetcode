@@ -10,5 +10,4 @@ class Solution(object):
         for key,value in freq.items():
             if key == value:
                 maxluck = max(maxluck, key)
-
         return maxluck
