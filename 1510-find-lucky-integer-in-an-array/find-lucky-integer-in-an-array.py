@@ -6,8 +6,9 @@ class Solution(object):
         """
         freq = {}
         maxluck = -1
-        for ele in arr:
-            freq[ele] = freq.get(ele,0) + 1
+        # for ele in arr:
+        #     freq[ele] = freq.get(ele,0) + 1
+        freq = Counter(arr)
         for key,value in freq.items():
             if key == value:
                 maxluck = max(maxluck, key)
