@@ -24,7 +24,7 @@ class Solution(object):
             v1 = stack1.pop() if stack1 else 0
             v2 = stack2.pop() if stack2 else 0
 
-            total = v1+v2+carry
+            total = v1 + v2 + carry
 
             carry = total//10
             node = ListNode(total%10)
