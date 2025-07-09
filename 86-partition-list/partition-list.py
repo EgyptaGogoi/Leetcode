@@ -21,7 +21,6 @@ class Solution(object):
                 more.next = ListNode(curr.val)
                 more = more.next
             curr = curr.next
-        more.next = None
         less.next = link.next
         return newhead.next
 
