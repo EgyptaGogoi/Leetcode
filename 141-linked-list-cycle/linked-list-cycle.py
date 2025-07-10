@@ -11,7 +11,7 @@ class Solution(object):
         :rtype: bool
         """
         # if (not head) or (not head.next) or (not head.next.next):
-        if not head :
+        if not head:
             return False
         fast = slow = head
         while fast and fast.next:
