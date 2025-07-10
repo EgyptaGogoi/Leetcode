@@ -11,15 +11,13 @@ class Solution(object):
         :rtype: bool
         """
         # if (not head) or (not head.next) or (not head.next.next):
-        if not (head and head.next and head.next.next):
+        if not head :
             return False
-        fast = head.next.next
-        slow = head
+        fast = slow = head
         while fast and fast.next:
-            if slow == fast:
-                print(slow)
-                return True
             slow = slow.next
             fast = fast.next.next
+            if slow == fast:
+                return True
         return False       
         
