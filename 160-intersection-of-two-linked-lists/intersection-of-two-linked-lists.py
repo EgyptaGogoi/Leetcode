@@ -13,7 +13,7 @@ class Solution(object):
         currA = headA
         currB = headB
 
-        while currA is not currB:
+        while currA != currB:
             currA = currA.next if currA else headB
             currB = currB.next if currB else headA
 
