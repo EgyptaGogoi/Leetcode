@@ -10,14 +10,17 @@ class Solution(object):
         :type head1, head1: ListNode
         :rtype: ListNode
         """
-        uniqAdd = set()
         currA = headA
         currB = headB
-        while currA:
-            uniqAdd.add(id(currA))
-            currA = currA.next
-        while currB:
-            if id(currB) in uniqAdd:
-                return currB
-            currB = currB.next
+        
+        while currA != currB:
+            if currA:
+                currA = currA.next
+            else:
+                currA = headB
+            if currB:
+                currB = currB.next
+            else:
+                currB = headA
+        return currA
         
