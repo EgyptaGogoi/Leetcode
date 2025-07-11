@@ -10,17 +10,15 @@ class Solution(object):
         :type head1, head1: ListNode
         :rtype: ListNode
         """
+        if not headA or not headB:
+            return None
+
         currA = headA
         currB = headB
-        
-        while currA != currB:
-            if currA:
-                currA = currA.next
-            else:
-                currA = headB
-            if currB:
-                currB = currB.next
-            else:
-                currB = headA
+
+        while currA is not currB:
+            currA = currA.next if currA else headB
+            currB = currB.next if currB else headA
+
         return currA
         
