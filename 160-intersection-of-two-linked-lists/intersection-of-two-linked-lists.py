@@ -10,9 +10,6 @@ class Solution(object):
         :type head1, head1: ListNode
         :rtype: ListNode
         """
-        if not headA or not headB:
-            return None
-
         currA = headA
         currB = headB
 
