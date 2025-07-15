@@ -12,21 +12,20 @@ class Solution(object):
         """
         if not root:
             return []
-        q = deque([root, None])
+        q = deque([root])
         res = []
-        level = []
         while q:
-            x = q.popleft()
-            if x:
+            l_size = len(q)
+            level = []
+            for i in range(l_size):
+                x = q.popleft()
                 level.append(x.val)
                 if x.left:
                     q.append(x.left)
                 if x.right:
                     q.append(x.right)
-            else:
-                res.append(level)
-                level = []
-                if q:
-                    q.append(None)
+            
+            res.append(level)
+        
         return res
         
