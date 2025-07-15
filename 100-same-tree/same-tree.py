@@ -11,24 +11,10 @@ class Solution(object):
         :type q: Optional[TreeNode]
         :rtype: bool
         """
-        pp = deque([p])
-        qq = deque([q])
-        while pp and qq:
-            x = pp.pop()
-            y = qq.pop()
-            if (not x and y) or (not y and x):
-                return False
-            if x and y:
-                if x.val != y.val:
-                    return False
-                pval = x.left if x.left else None
-                qval = y.left if y.left else None
-                pp.appendleft(pval)
-                qq.appendleft(qval)
-                pval = x.right if x.right else None
-                qval = y.right if y.right else None
-                pp.appendleft(pval)
-                qq.appendleft(qval)
-        if qq or pp:
+        if not p and not q:
+            return True 
+        if not q or not p:
             return False
-        return True
+        if p.val != q.val:
+            return False
+        return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
