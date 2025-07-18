@@ -16,11 +16,6 @@ class Solution(object):
         root.left = self.invertTree(root.right)
         root.right = dummy
         return root
-        # if not root:
-        #     return root
-        # dummy = root.left if root.left else None
-        # root.left = root.right
-        # root.right = dummy
-        # return self.invertTree(root.left) 
+        
 
         
