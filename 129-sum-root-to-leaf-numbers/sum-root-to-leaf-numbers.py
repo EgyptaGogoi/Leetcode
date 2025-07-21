@@ -18,11 +18,4 @@ class Solution(object):
         :type root: Optional[TreeNode]
         :rtype: int
         """
-        return self.func(root, 0)
-            
-            
-
-        
-
-        
-        
+        return self.func(root, 0) 
