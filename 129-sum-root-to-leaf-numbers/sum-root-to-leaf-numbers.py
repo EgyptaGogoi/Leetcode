@@ -5,17 +5,17 @@
 #         self.left = left
 #         self.right = right
 class Solution(object):
-    def func(self,root, res):
-        if root:
-            sum = (res*10) + (root.val) 
-            if not root.left and not root.right:
-                return sum
-            else:
-                return self.func(root.left, sum) + self.func(root.right, sum)
-        return 0
     def sumNumbers(self, root):
         """
         :type root: Optional[TreeNode]
         :rtype: int
         """
-        return self.func(root, 0) 
+        def func(root, res):
+            if root:
+                sum = (res*10) + (root.val) 
+                if not root.left and not root.right:
+                    return sum
+                else:
+                    return func(root.left, sum) + func(root.right, sum)
+            return 0
+        return func(root, 0) 
