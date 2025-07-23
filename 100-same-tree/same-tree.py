@@ -11,13 +11,15 @@ class Solution(object):
         :type q: Optional[TreeNode]
         :rtype: bool
         """
-        left = False
-        right = False
-        if (not p and q) or (not q and p):
-            return False
         if not p and not q:
             return True
-        if p.val == q.val:
-            left = self.isSameTree(p.left, q.left)
-            right = self.isSameTree(p.right, q.right)
-        return left and right
+        if (not p and q) or (not q and p):
+            return False
+        if p.val != q.val:
+            return False
+        # r
+        right = self.isSameTree(p.right, q.right)
+        # l
+        left = self.isSameTree(p.left, q.left)
+        return right and left
+        
