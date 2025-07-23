@@ -21,6 +21,8 @@ class Solution(object):
         :type root: Optional[TreeNode]
         :rtype: bool
         """
+        if not root:
+            return True
         return self.isMirrorTree(root.left, root.right)
          
 
