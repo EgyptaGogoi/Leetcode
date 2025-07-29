@@ -7,15 +7,7 @@
 class Solution(object):
     pre = None
     inomap = None
-    def traverse(self, pst, pend, ist, iend):
-            inodx = self.inomap[self.pre[pst]]
-            l = inodx - ist
-            r = iend - inodx
-            node = TreeNode(self.pre[pst])
-            node.left = self.traverse(pst+1, pst+l, ist, inodx-1) if l else None
-            node.right = self.traverse(pst+l+1, pend, inodx+1, iend) if r else None
-            return node
-
+    
     def buildTree(self, preorder, inorder):
         """
         :type preorder: List[int]
@@ -24,7 +16,15 @@ class Solution(object):
         """
         self.pre = preorder
         self.inomap = {item:i for i, item in enumerate(inorder)}
-        return self.traverse(0, len(preorder)-1, 0, len(inorder)-1)
+        def traverse(pst, pend, ist, iend):
+            inodx = self.inomap[self.pre[pst]]
+            l = inodx - ist
+            r = iend - inodx
+            node = TreeNode(self.pre[pst])
+            node.left = traverse(pst+1, pst+l, ist, inodx-1) if l else None
+            node.right = traverse(pst+l+1, pend, inodx+1, iend) if r else None
+            return node
+        return traverse(0, len(preorder)-1, 0, len(inorder)-1)
         
 
 
