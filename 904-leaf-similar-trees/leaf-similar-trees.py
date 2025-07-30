@@ -23,8 +23,6 @@ class Solution(object):
         list1 = []
         list2 = []
         self.getLeafList(root1, list1)
-        print(list1)
         self.getLeafList(root2, list2)
-        print(list2)
         return list1 == list2
         
