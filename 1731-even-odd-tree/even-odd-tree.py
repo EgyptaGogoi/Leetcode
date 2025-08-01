@@ -21,14 +21,10 @@ class Solution(object):
                 x = q.popleft()
                 level.append(x.val)           
                 if even:
-                    if level[i] % 2 == 0:
-                        return False
-                    if i > 0 and level[i] <= level[i - 1]:
+                    if (level[i] % 2 == 0) or (i > 0 and level[i] <= level[i - 1]):
                         return False
                 else:
-                    if level[i] % 2 != 0:
-                        return False
-                    if i > 0 and level[i] >= level[i - 1]:
+                    if (level[i] % 2 != 0) or (i > 0 and level[i] >= level[i - 1]):
                         return False
                 if x.left:
                     q.append(x.left)
