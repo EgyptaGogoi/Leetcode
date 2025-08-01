@@ -17,15 +17,13 @@ class Solution(object):
         while q:
             l = len(q)
             level = []
-            for _ in range(l):
+            for i in range(l):
                 x = q.popleft()
                 level.append(x.val)
                 if x.left:
                     q.append(x.left)
                 if x.right:
                     q.append(x.right)
-            n = len(level)
-            for i in range(n):
                 if even:
                     if level[i] % 2 == 0:
                         return False
