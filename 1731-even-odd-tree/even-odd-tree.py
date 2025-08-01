@@ -20,11 +20,6 @@ class Solution(object):
             for i in range(l):
                 x = q.popleft()
                 level.append(x.val)           
-                if x.left:
-                    q.append(x.left)
-                if x.right:
-                    q.append(x.right)
-                    
                 if even:
                     if level[i] % 2 == 0:
                         return False
@@ -35,6 +30,10 @@ class Solution(object):
                         return False
                     if i > 0 and level[i] >= level[i - 1]:
                         return False
+                if x.left:
+                    q.append(x.left)
+                if x.right:
+                    q.append(x.right)
             even = not even
         return True
 
