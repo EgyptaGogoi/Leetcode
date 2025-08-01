@@ -10,26 +10,32 @@ class Solution(object):
         :type root: Optional[TreeNode]
         :rtype: bool
         """
+        if not root:
+            return True
         q = deque([root])
         even = True
+        level = []
 
         while q:
             l = len(q)
             level = []
-
             for i in range(l):
                 x = q.popleft()
-                level.append(x.val)           
-                if even:
-                    if (level[i] % 2 == 0) or (i > 0 and level[i] <= level[i - 1]):
-                        return False
-                else:
-                    if (level[i] % 2 != 0) or (i > 0 and level[i] >= level[i - 1]):
-                        return False
+                level.append(x.val)
                 if x.left:
                     q.append(x.left)
                 if x.right:
                     q.append(x.right)
+                if even:
+                    if level[i] % 2 == 0:
+                        return False
+                    if i > 0 and level[i] <= level[i - 1]:
+                        return False
+                else:
+                    if level[i] % 2 != 0:
+                        return False
+                    if i > 0 and level[i] >= level[i - 1]:
+                        return False
             even = not even
         return True
 
