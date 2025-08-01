@@ -10,8 +10,6 @@ class Solution(object):
         :type root: Optional[TreeNode]
         :rtype: bool
         """
-        if not root:
-            return True
         q = deque([root])
         even = True
         level = []
