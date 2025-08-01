@@ -24,7 +24,6 @@ class Solution(object):
                     q.append(x.left)
                 if x.right:
                     q.append(x.right)
-            print(level)
             n = len(level)
             for i in range(n):
                 if even:
