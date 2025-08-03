@@ -14,7 +14,6 @@ class Solution(object):
         """
         self.postmap = {key : i for i, key in enumerate(postorder)}
         def traverse(prest, prend, postr, posend):
-            # rootind = self.postmap[self.pre[prest]]
             if prest> prend:
                 return None
             node = TreeNode(preorder[prest])
