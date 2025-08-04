@@ -15,7 +15,6 @@ class Solution(object):
             if root:
                 left = getHeight(root.left)
                 right = getHeight(root.right)
-                # return left+right
                 self.diam = max(self.diam, left+right)
                 return max(left,right)+1
             return 0
