@@ -5,19 +5,22 @@
 #         self.left = left
 #         self.right = right
 class Solution(object):
-    diam = 0
+
     def diameterOfBinaryTree(self, root):
         """
         :type root: Optional[TreeNode]
         :rtype: int
         """
+        self.diam = 0
         def getHeight(root):
-            if root:
-                left = getHeight(root.left)
-                right = getHeight(root.right)
-                self.diam = max(self.diam, left+right)
-                return max(left,right)+1
-            return 0
+            if not root:
+                return 0
+                
+            left = getHeight(root.left)
+            right = getHeight(root.right)
+            self.diam = max(self.diam, left+right)
+            return max(left,right)+1
+            
         getHeight(root)
         return self.diam
         
