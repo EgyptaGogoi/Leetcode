@@ -6,11 +6,10 @@ class Solution(object):
         """
         n = len(rains)
         full = {}           
-        dry_days = []      
+        dry_days = []       
         ans = [-1] * n     
 
-        for i in range(n):
-            lake = rains[i]
+        for i, lake in enumerate(rains):
             if lake == 0:
                 dry_days.append(i)
                 ans[i] = 1  
@@ -18,10 +17,11 @@ class Solution(object):
                 if lake in full:
                     j = bisect_right(dry_days, full[lake])
                     if j == len(dry_days):
-                        return []  
+                        return [] 
                     dry_day = dry_days.pop(j)
                     ans[dry_day] = lake
                 full[lake] = i
                 ans[i] = -1
 
         return ans
+        
