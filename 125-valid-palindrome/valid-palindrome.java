@@ -1,10 +1,9 @@
 class Solution {
     public boolean isPalindrome(String s) {
-        String newS = s.toLowerCase().replaceAll("[^a-z0-9]", "");
-        char newSt[] = newS.toCharArray();
-        int i=0, j=newSt.length-1;
+        s = s.toLowerCase().replaceAll("[^a-z0-9]", "");
+        int i=0, j=s.length()-1;
         while(i<j){
-            if (newSt[i] != newSt[j])
+            if (s.charAt(i) != s.charAt(j))
                 return false;
             i++;
             j--;
