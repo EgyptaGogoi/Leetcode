@@ -16,7 +16,6 @@ class Solution {
             }
             else if (nums[l] <= nums[mid]){
                 if(nums[l] <= target && target < nums[mid])
-                // if(l < t < m)
                     r = mid - 1;
                 else
                     l = mid + 1;
@@ -25,8 +24,3 @@ class Solution {
         return -1;
     }
 }
-
-
-// 4 5   1 2 3
-// l     m   r
-// t=3
