@@ -13,7 +13,7 @@ class Solution {
         for (int i = 0; i < m.length; i++){
             if(m[i][0] <= t && t <= m[i][m[0].length-1]){
                 if (BS(m[i], t))
-                    return BS(m[i], t);
+                    return true;
             }
         }
         return false;
